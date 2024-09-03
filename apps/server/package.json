@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "rimraf dist && yarn build && nodemon ./dist/index.js",
     "build": "tsc",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0 --fix",
     "test": "echo \"Server test\""
   },
   "devDependencies": {

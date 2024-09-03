@@ -22,6 +22,19 @@ module.exports = {
     { files: ['*.js', '*.ts'] },
   ],
   rules: {
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'FunctionDeclaration',
+        message:
+          'Function declarations are not allowed. Use arrow functions instead.',
+      },
+      {
+        selector: 'FunctionExpression',
+        message:
+          'Function expressions are not allowed. Use arrow functions instead.',
+      },
+    ],
     'node/no-unsupported-features/es-syntax': [
       'error',
       {
