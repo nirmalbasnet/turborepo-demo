@@ -1,6 +1,6 @@
-const { resolve } = require("node:path");
+const { resolve } = require('node:path');
 
-const project = resolve(process.cwd(), "tsconfig.json");
+const project = resolve(process.cwd(), 'tsconfig.json');
 
 /*
  * This is a custom ESLint configuration for use with
@@ -10,8 +10,8 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["eslint:recommended", "prettier", "turbo"],
-  plugins: ["only-warn"],
+  extends: ['eslint:recommended', 'prettier', 'turbo'],
+  plugins: ['only-warn'],
   globals: {
     React: true,
     JSX: true,
@@ -20,7 +20,7 @@ module.exports = {
     browser: true,
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       typescript: {
         project,
       },
@@ -28,12 +28,19 @@ module.exports = {
   },
   ignorePatterns: [
     // Ignore dotfiles
-    ".*.js",
-    "node_modules/",
-    "dist/",
+    '.*.js',
+    'node_modules/',
+    'dist/',
   ],
   overrides: [
     // Force ESLint to detect .tsx files
-    { files: ["*.js?(x)", "*.ts?(x)"] },
+    { files: ['*.js?(x)', '*.ts?(x)'] },
   ],
+  rules: {
+    'no-console': 'warn', // Warns if `console` statements are used. Helpful for catching debug code before production.
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }], // Reports unused variables, but ignores variables that start with `_` (often used for intentionally unused parameters).
+    semi: ['error', 'always'], // Enforces the use of semicolons at the end of statements.
+    quotes: ['error', 'single'], // Enforces the use of single quotes for strings.
+    indent: ['error', 2], // Enforces a consistent indentation style (2 spaces in this case).
+  },
 };
