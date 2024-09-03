@@ -15,14 +15,17 @@
     "@packages/eslint-config": "*",
     "@packages/typescript-config": "*",
     "@turbo/gen": "^1.12.4",
-    "@types/node": "^20.11.24",
     "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/parser": "^8.4.0",
     "eslint": "^8.57.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "react": "^18.2.0"
-  }
+  },
+  "main": "index.js",
+  "license": "MIT"
 }
