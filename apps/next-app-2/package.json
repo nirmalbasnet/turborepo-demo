@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "build:css": "tailwindcss -i public/styles/input.css -o public/styles/styles.css",
-    "watch:css": "yarn build:css -w"
+    "watch:css": "yarn build:css -w",
+    "test": "echo \"App 2 test\""
   },
   "dependencies": {
     "next": "14.2.7",
